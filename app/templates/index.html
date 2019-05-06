@@ -1,0 +1,25 @@
+{% extends 'base.html' %} <!-- instructs that the block content below is going to extend into base.html; a pointer; the index page loads, and also pulls the <DOCTYPE!>, head, etc., from base.html -->
+{% block content %} <!-- starts the block content that is used in the base page -->
+<h1>This is the beginning</h1>
+
+<h5>Game of Thrones Characters</h5>
+{% for keys, values in characters.items() %} 
+    {% if keys == 'men' %}
+        {% for name in values %}
+            <ul>
+                <li>{{name}}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        {% for name in values %}
+            <ul>
+                <li>{{name}}</li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+<!-- In HTML, anything inside of curly brackets is where we place our Python code -->
+<!-- the modulo also has to go inside the curly brackets with spaces between; also, don't inclulde modulos inside comments because Jinja is fucking stupid about it -->
+{{name}}
+<!-- This is "jinja templating", aka "variable templating" -->
+{% endblock %}
