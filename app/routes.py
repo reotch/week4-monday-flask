@@ -12,7 +12,7 @@ def hello_world():
     }
     return render_template('index.html', name = name, characters = characters)
 
-@app.route('/profile/<gender>/<name>', methods = ["GET"])
+@app.route('/profile/', methods = ["GET"])
 def profile(name, gender):
     info = {}
 
